@@ -1,189 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Game Developer</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+            --card-bg: #1e293b;
+        }
 
-    <!-- optional for SEO -->
-    <meta
-      name="description"
-      content="A minimal portfolio website showcasing my skills, projects, and writings."
-    />
-    <meta
-      name="keywords"
-      content="portfolio, minimal design,minimalism, web development, projects, skills, html, css"
-    />
-    <meta name="author" content="Nilaacodes" />
-    <meta property="og:title" content="Nilaacodes | Home" />
-    <meta
-      property="og:description"
-      content="A minimal portfolio website showcasing my skills, projects, and writings."
-    />
-    <meta
-      property="og:image"
-      content="https://nilaachandra.github.io/animepfp.jpg"
-    />
-    <meta
-      property="og:url"
-      content="https://nilaachandra.github.io/minimalio"
-    />
-    <meta property="og:type" content="website" />
-    <!-- optional for SEO -->
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
 
-    <title>Nilaacodes | Home</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/jpg" href="./animepfp.jpg" />
-  </head>
-  <body>
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 { margin: 0; font-size: 2.5rem; color: var(--accent-color); }
+        h2 { color: var(--accent-color); border-left: 4px solid var(--accent-color); padding-left: 10px; margin-top: 30px; }
+
+        .about-section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-list, .project-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-list li, .project-list li {
+            background: var(--card-bg);
+            margin-bottom: 8px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border-left: 3px solid transparent;
+            transition: 0.3s;
+        }
+
+        .project-list li:hover {
+            border-left: 3px solid var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            background: var(--accent-color);
+            color: var(--bg-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            float: right;
+        }
+
+        .hobbies {
+            font-style: italic;
+            color: #94a3b8;
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
     <header>
-      <img src="./animepfp.jpg" alt="" height="90" width="90" />
-      <div>
-        <div>
-          <h1 style="line-height: 0">Nilaa Laishram</h1>
-        </div>
-        <p style="color: #fd6500;">
-          Full Stack Developer | UI Designer
-        </p>
-      </div>
+        <h1>[YOUR NAME]</h1>
+        <p>Game Developer | Pixel Artist | Full Stack Developer</p>
     </header>
 
-    <nav>
-      <a href="index.html" style="text-decoration: underline; color: white"
-        >Home</a
-      >
-      <a href="works.html">Works</a>
-      <a href="blogs.html">Blogs</a>
-      <a href="contact.html">Contact Me</a>
-    </nav>
-    <main>
-      <section class="about">
-        <h1>About me</h1>
-        <p>
-          I am a Full Stack Developer with a background in geology and
-          mathematics. I love building and shipping cool products. My expertise
-          lies in React, Next.js, and UI design, and I enjoy working on projects
-          that challenge me to learn new things.
-        </p>
-      </section>
-      <section class="about">
-        <h1>Skills</h1>
-        <p>
-          Next.Js, React, TypeScript, JavaScript, Tailwind, Express, PostgreSQL,
-          MySQL, Prisma, Supabase, Firebase, Figma.
-        </p>
-      </section>
-      <section class="experience">
-        <h1>Experience</h1>
-        <ul>
-          <li><span>Developer Freelancer</span> ● January 2024 - Present</li>
-          <li>
-            <span>Web Dev Instructor, SkyIL Computer Institute</span> ● May 2023
-            - Present
-          </li>
+    <section class="about-section">
+        <h2>About Me</h2>
+        <p>I am a Game Developer and Full Stack Developer with a background in geology and mathematics. I love building and shipping cool products. I am a student graduating soon, driven by a passion for technical challenges and visual storytelling.</p>
+    </section>
+
+    <h2>Technical Arsenal</h2>
+    <div class="grid">
+        <div>
+            <h3>Languages & Engines</h3>
+            <ul class="skill-list">
+                <li>Proficient in C and C++</li>
+                <li>Proficient in Unity and Unreal</li>
+                <li>Fluent in English and Filipino</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Design & Tools</h3>
+            <ul class="skill-list">
+                <li>Pixel Art & 2D Pixel Animation</li>
+                <li>Visual Design (Graphic, Image & Video Editing)</li>
+                <li>Proficient in AI Tools</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Professional Skills</h2>
+    <div class="grid">
+        <ul class="skill-list">
+            <li>Microsoft Office & Google Apps</li>
+            <li>Research Skills</li>
+            <li>Self and Time Management</li>
+            <li>Teamwork and Adaptability</li>
         </ul>
-      </section>
-      <section class="projects">
-        <h1>Projects</h1>
-        <ul>
-          <li>
-            <a href="https://Spotlistify.vercel.app" target="_blank"
-              >Spotlistify</a
-            >
-            - A directory of Spotify playlists.
-          </li>
-          <li>
-            <a href="https://sillyquestions.vercel.app" target="_blank"
-              >Silly Questions</a
-            >
-            - An AI powered silly tecch questions generator.
-          </li>
-          <li>
-            <a href="https://27startups.vercel.app" target="_blank"
-              >27Startups</a
-            >
-            - A directory of app, product, bussinesses, startups ideas.
-          </li>
+    </div>
+
+    <h2>Quest Log (Past Projects)</h2>
+    <div class="grid">
+        <ul class="project-list">
+            <li><strong>Paramnesia</strong> <span class="tag">Unity</span></li>
+            <li><strong>Scars of Harpuia</strong> <span class="tag">Unity</span></li>
+            <li><strong>Mythos Manuscripts</strong> <span class="tag">Unity</span></li>
+            <li><strong>Locally Hosted Multiplayer Tic-Tac-Toe</strong> <span class="tag">Unity</span></li>
+            <li><strong>QuestLog</strong> <span class="tag">Online Community</span></li>
         </ul>
-        <a href="works.html">More Projects</a>
-      </section>
-      <section>
-        <h1>My Blogs</h1>
-        <ul>
-          <li>
-            <a href="blog-example.html">The Art of Minimal UI Design</a> - A
-            blog post on creating simple and effective user interfaces.
-          </li>
-          <li>
-            <a
-              href="https://nilaacodes.vercel.app/writings/building-a-component-for-my-portfolio-that-shows-how-far-you-are-from-me"
-              >Building a component for my portfolio that shows how far you are
-              from me.</a
-            >
-            - Tutorial on how to build a component that calculates the distance
-            between two location through ip address.
-          </li>
-          <li>
-            <a
-              href="https://nilaacodes.vercel.app/writings/real-madrid-lost-pre-season-el-clasico"
-              >Real Madrid lost their pre season El Clasico, and you know what
-              that means!!</a
-            >
-            -Preseason has started and Real Madrid have lost the first two
-            games.
-          </li>
+        <ul class="project-list">
+            <li><strong>Nomorod</strong> <span class="tag">C++</span></li>
+            <li><strong>Elden Rouge</strong> <span class="tag">C++</span></li>
+            <li><strong>Text Based Bank Simulator</strong> <span class="tag">C</span></li>
+            <li><strong>Text Based Fighting Game</strong> <span class="tag">C</span></li>
+            <li><strong>Text Based Tic-Tac-Toe</strong> <span class="tag">C</span></li>
         </ul>
-        <a href="blogs.html">More Blogs</a>
-      </section>
-      <section id="contact">
-        <h1>Contact Me</h1>
-        <ul>
-          <li>
-            Email:
-            <a href="mailto:nilalaishram@example.com">nilalaishram@gmail.com</a>
-          </li>
-          <li>
-            Twitter:
-            <a href="https://x.com/nilaacodes" target="_blank">nilaacodes</a>
-          </li>
-          <li>
-            GitHub:
-            <a href="https://github.com/nilaachandra" target="_blank"
-              >github.com/nilaachandra</a
-            >
-          </li>
-          <li>
-            Main Portfolio:
-            <a href="https://nilaacodes.vercel.app" target="_blank"
-              >Nilaacodes</a
-            >
-          </li>
-          <li>
-            Instagram:
-            <a href="https://www.instagram.com/niillaaa.a/" target="_blank"
-              >niillaaa.a</a
-            >
-          </li>
-          <li>
-            Buy Me A Coffee:
-            <a href="https://buymeacoffee.com/nilaacodes" target="_blank"
-              >buymeacoffee.com/nilaacodes</a
-            >
-          </li>
-        </ul>
-      </section>
-    </main>
-    <hr />
-    <footer>
-      &copy; 2024 Nilaacodes. All rights reserved.
-      <p>
-        Disclaimer: Building this minimal design was tougher than it looks.
-        Every detail took a lot of effort to get just right. Thanks for
-        visiting, and I hope you enjoy the simplicity!
-      </p>
-      <p style="font-style: italic">
-        "Good design is as little design as possible." - some German
-        motherfucker
-      </p>
+    </div>
+
+    <footer class="hobbies">
+        <p>Current Inventory: Pixel Art, Pokémon Cards, and Figurine Collections.</p>
     </footer>
-  </body>
+</div>
+
+</body>
 </html>

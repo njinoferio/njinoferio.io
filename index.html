@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naomi Inoferio | Game Dev</title>
+    <title>Naomi Inoferio | Game Dev & Pixel Artist</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,23 +12,30 @@
 <div class="container">
     <header>
         <h1>NAOMI INOFERIO</h1>
-        <p style="color: var(--accent-pink);">STUDENT | GAME DEVELOPER | PIXEL ARTIST</p>
+        <p class="subtitle">✨ STUDENT | GAME DEVELOPER | PIXEL ARTIST ✨</p>
     </header>
 
     <div class="nav-links">
-        <a href="https://linkedin.com/in/YOUR_LINK" class="btn">LINKEDIN</a>
-        <a href="resume.pdf" class="btn">RESUME.PDF</a>
+        <a href="https://linkedin.com/in/YOUR_PROFILE" class="btn" target="_blank">LINKEDIN</a>
+        <a href="resume.pdf" class="btn btn-primary" target="_blank">VIEW RESUME.PDF</a>
     </div>
 
-    <section>
+    <section class="about-section">
         <h2>// ABOUT_ME</h2>
-        <p>I am a Game Developer and Pixel Artist. As a student about to graduate, I focus on creating immersive digital experiences through clean code and expressive 2D art. I love turning complex ideas into playable reality.</p>
+        <p>I am a Game Developer and Pixel Artist.</p>
     </section>
 
-    <h2>// WORK_SAMPLES (PORTFOLIO)</h2>
+    <h2>// PROJECT_LOG (PORTFOLIO)</h2>
     <div class="portfolio-grid">
+        
         <div class="portfolio-item">
-            <img src="images/paramnesia.png" alt="Paramnesia" class="portfolio-img">
+            <div class="slider-container" id="slider1">
+                <button class="arrow prev" onclick="changeSlide('slider1', -1)">&#10094;</button>
+                <img src="images/paramnesia1.png" class="slider-img active" alt="Paramnesia 1">
+                <img src="images/paramnesia2.png" class="slider-img" alt="Paramnesia 2">
+                <img src="images/paramnesia3.png" class="slider-img" alt="Paramnesia 3">
+                <button class="arrow next" onclick="changeSlide('slider1', 1)">&#10095;</button>
+            </div>
             <div class="project-info">
                 <span class="project-title">Paramnesia</span>
                 <span class="tag">Unity</span><span class="tag">C#</span>
@@ -37,52 +44,100 @@
         </div>
 
         <div class="portfolio-item">
-            <img src="images/harpuia.png" alt="Scars of Harpuia" class="portfolio-img">
+            <div class="slider-container" id="slider2">
+                <button class="arrow prev" onclick="changeSlide('slider2', -1)">&#10094;</button>
+                <img src="images/harpuia1.png" class="slider-img active" alt="Harpuia 1">
+                <img src="images/harpuia2.png" class="slider-img" alt="Harpuia 2">
+                <button class="arrow next" onclick="changeSlide('slider2', 1)">&#10095;</button>
+            </div>
             <div class="project-info">
                 <span class="project-title">Scars of Harpuia</span>
-                <span class="tag">Unity</span><span class="tag">2D</span>
-                <p>Fast-paced action featuring custom pixel art assets.</p>
+                <span class="tag">Unity</span><span class="tag">2D Art</span>
+                <p> </p>
             </div>
         </div>
 
         <div class="portfolio-item">
-            <img src="images/elden.png" alt="Elden Rouge" class="portfolio-img">
+            <div class="slider-container" id="slider3">
+                <button class="arrow prev" onclick="changeSlide('slider3', -1)">&#10094;</button>
+                <img src="images/elden1.png" class="slider-img active" alt="Elden Rouge 1">
+                <img src="images/elden2.png" class="slider-img" alt="Elden Rouge 2">
+                <button class="arrow next" onclick="changeSlide('slider3', 1)">&#10095;</button>
+            </div>
             <div class="project-info">
                 <span class="project-title">Elden Rouge</span>
                 <span class="tag">C++</span><span class="tag">Logic</span>
-                <p>A challenging roguelike built from the ground up in C++.</p>
+                <p>A challenging rogue like game with Pixel Art.</p>
             </div>
         </div>
     </div>
 
     <h2>// TECHNICAL_STATS</h2>
-    <div class="skills-grid">
-        <div>
-            <h3 style="color: var(--accent-cyan);">ENGINES & LANGUAGES</h3>
+    <div class="grid">
+        <div class="stat-card">
+            <h3>LANGUAGES & ENGINES</h3>
             <ul>
-                <li>C / C++ / C#</li>
+                <li>Proficient in C and C++</li>
                 <li>Unity & Unreal Engine</li>
-                <li>English & Filipino (Fluent)</li>
+                <li>Fluent in English & Filipino</li>
             </ul>
         </div>
-        <div>
-            <h3 style="color: var(--accent-cyan);">ART & TOOLS</h3>
+        <div class="stat-card">
+            <h3>DESIGN & TOOLS</h3>
             <ul>
                 <li>Pixel Art & 2D Animation</li>
-                <li>Visual Design (Graphic, Image, Video)</li>
-                <li>AI Research Tools</li>
+                <li>Visual Design (Image/Video)</li>
+                <li>AI Tools & Research</li>
+            </ul>
+        </div>
+        <div class="stat-card">
+            <h3>PROFESSIONAL</h3>
+            <ul>
+                <li>Self & Time Management</li>
+                <li>Teamwork & Adaptability</li>
+                <li>MS Office & Google Apps</li>
             </ul>
         </div>
     </div>
 
-    <h2>// CERTIFICATIONS</h2>
-    <div class="cert-item">🏆 Unity Certified Associate - Issued by Unity [202X]</div>
-    <div class="cert-item">🏆 Professional Skill Certificate - Issued by Org [202X]</div>
-
-    <div class="footer-info">
-        LOADED_INVENTORY: Pixel Art, Pokémon Cards, Figurine Collection.
+    <h2>// CERTIFICATIONS (GALLERY)</h2>
+    <div class="cert-grid">
+        <div class="cert-card">
+            <img src="images/cert1.jpg" alt="Certification 1">
+            <p>Unity Junior Programmer Certification</p>
+        </div>
+        <div class="cert-card">
+            <img src="images/cert3.jpg" alt="Certification 3">
+            <p>Unity Essentials Certification</p>
+        </div>
     </div>
+
+    <footer class="inventory">
+        INVENTORY: Pixel Art, Pokémon Cards, Figurine Collection, & Other Collections.
+    </footer>
 </div>
+
+<script>
+function changeSlide(sliderId, direction) {
+    const slider = document.getElementById(sliderId);
+    const slides = slider.getElementsByClassName('slider-img');
+    let activeIndex = 0;
+
+    for (let i = 0; i < slides.length; i++) {
+        if (slides[i].classList.contains('active')) {
+            activeIndex = i;
+            slides[i].classList.remove('active');
+            break;
+        }
+    }
+
+    let nextIndex = activeIndex + direction;
+    if (nextIndex >= slides.length) nextIndex = 0;
+    if (nextIndex < 0) nextIndex = slides.length - 1;
+
+    slides[nextIndex].classList.add('active');
+}
+</script>
 
 </body>
 </html>

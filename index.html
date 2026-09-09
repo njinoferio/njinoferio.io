@@ -1,103 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naomi Inoferio | Game Dev</title>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Naomi Inoferio — game developer and pixel artist." />
+    <title>Naomi Inoferio — Game Dev Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-grain"></div>
+    <main class="binder">
+      <nav class="topbar" aria-label="Primary navigation">
+        <a class="wordmark" href="#top">NJI<span>_</span></a>
+        <div class="nav-links">
+          <a href="#collection">Collection</a>
+          <a href="#skills">Stats</a>
+          <a href="#credentials">Badges</a>
+        </div>
+        <a class="tiny-link" href="resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
+      </nav>
 
-<div class="container">
-    <header>
-        <h1>NAOMI INOFERIO</h1>
-        <p class="subtitle"> STUDENT | GAME DEVELOPER | PIXEL ARTIST </p>
-    </header>
-
-    <div class="nav-links">
-        <a href="https://linkedin.com/in/naomi-inoferio" class="btn" target="_blank">LINKEDIN</a>
-        <a href="resume.pdf" class="btn btn-primary" target="_blank">VIEW RESUME</a>
-    </div>
-
-    <section class="about-section">
-        <h2>// ABOUT_ME</h2>
-        <p>I am a Game Developer and Pixel Artist with a deep love for <strong>cozy, cute, and pixel-art games</strong>. I am particularly passionate about <strong>simulators</strong> and aspire to create charming, relaxing worlds that players can get lost in.</p>
-    </section>
-
-    <h2>// PROJECT_LOG (PAST MISSIONS)</h2>
-    <div class="portfolio-grid">
-        
-        <div class="portfolio-item">
-            <h3>UNITY ENGINE</h3>
-            <ul class="project-list">
-                <li>Paramnesia <span class="tag">Psychological Horror</span></li>
-                <li>Scars of Harpuia <span class="tag">Multiplayer</span></li>
-                <li>Mythos Manuscripts <span class="tag">Educational</span></li>
-                <li>Locally Hosted Multiplayer Tic-Tac-Toe</li>
-            </ul>
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> PORTFOLIO / 2026</p>
+          <h1>Naomi<br /><em>Inoferio</em></h1>
+          <p class="intro">Game developer and pixel artist making cozy, curious worlds with a little magic in every detail.</p>
+          <div class="actions">
+            <a class="button button-dark" href="#collection">Browse collection <b>↓</b></a>
+            <a class="button button-quiet" href="https://linkedin.com/in/naomi-inoferio" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          </div>
         </div>
 
-        <div class="portfolio-item">
-            <h3>UNREAL ENGINE</h3>
-            <ul class="project-list">
-                <li>Tower Defense Game <span class="tag">Strategy</span></li>
-                <li>Bounce <span class="tag">Physics</span></li>
-            </ul>
-        </div>
+        <article class="player-card" aria-label="Naomi's featured player card">
+          <div class="card-topline"><span>STUDENT DEVELOPER</span><span>001/∞</span></div>
+          <div class="portrait-area">
+            <div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div>
+            <div class="pixel-flower flower-one">✦</div><div class="pixel-flower flower-two">✦</div>
+            <div class="avatar" aria-hidden="true">N</div>
+          </div>
+          <div class="card-name"><h2>Naomi Inoferio</h2><span>✦</span></div>
+          <p class="card-type">GAME DEV STUDENT · PIXEL ARTIST</p>
+          <p class="card-flavour">“Build a place someone wants to stay awhile.”</p>
+          <div class="card-footer"><span>CLASS: CREATIVE CODER</span><strong>LV. 03</strong></div>
+        </article>
+      </section>
 
-        <div class="portfolio-item">
-            <h3>WEB & COMMUNITY</h3>
-            <ul class="project-list">
-                <li>QuestLog <span class="tag">Web Hosted Community</span></li>
-            </ul>
-        </div>
+      <section class="about" aria-labelledby="about-title">
+        <p class="section-number">01 / ABOUT THE MAKER</p>
+        <div><h2 id="about-title">Soft worlds,<br />thoughtful systems.</h2></div>
+        <p>I’m a game developer and pixel artist with a fondness for cozy simulators, cute details, and experiences that feel like a small escape. I love giving a game both a solid mechanical core and a handmade sense of place.</p>
+      </section>
 
-        <div class="portfolio-item">
-            <h3>C / C++ LOGIC</h3>
-            <ul class="project-list">
-                <li>Elden Rouge <span class="tag">C++</span></li>
-                <li>Nomorod <span class="tag">C++</span></li>
-                <li>Text Based Fighting Game <span class="tag">C</span></li>
-                <li>Text Based Bank Simulator <span class="tag">C</span></li>
-                <li>Text Based Tic-Tac-Toe <span class="tag">C</span></li>
-            </ul>
+      <section class="collection-section" id="collection" aria-labelledby="collection-title">
+        <div class="section-heading"><div><p class="section-number">02 / PROJECT COLLECTION</p><h2 id="collection-title">A few things I’ve made.</h2></div><p class="collection-note">Tap a card to see<br />what it’s about.</p></div>
+        <div class="card-grid">
+          <article class="project-card featured-card"><div class="card-stamp">UNITY / 01</div><div><p class="project-kind">PSYCHOLOGICAL HORROR</p><h3>Paramnesia</h3><p>A mind-bending game experience made in Unity.</p></div><span class="card-mark">P</span></article>
+          <article class="project-card"><div class="card-stamp">UNITY / 02</div><div><p class="project-kind">MULTIPLAYER</p><h3>Scars of Harpuia</h3><p>A shared adventure with multiplayer at its heart.</p></div><span class="card-mark">S</span></article>
+          <article class="project-card warm"><div class="card-stamp">UNITY / 03</div><div><p class="project-kind">EDUCATIONAL</p><h3>Mythos Manuscripts</h3><p>Learning and folklore meet in an interactive world.</p></div><span class="card-mark">M</span></article>
+          <article class="project-card dark"><div class="card-stamp">UNREAL / 01</div><div><p class="project-kind">STRATEGY</p><h3>Tower Defense</h3><p>Plan, place, and protect the path.</p></div><span class="card-mark">T</span></article>
+          <article class="project-card"><div class="card-stamp">UNREAL / 02</div><div><p class="project-kind">PHYSICS</p><h3>Bounce</h3><p>A small, satisfying experiment in motion.</p></div><span class="card-mark">B</span></article>
+          <article class="project-card pale"><div class="card-stamp">WEB / 01</div><div><p class="project-kind">COMMUNITY</p><h3>QuestLog</h3><p>A web-hosted space for players to connect.</p></div><span class="card-mark">Q</span></article>
         </div>
-    </div>
+        <details class="archive"><summary>Open the archive <span>+</span></summary><div class="archive-content"><p><b>Unity:</b> Locally Hosted Multiplayer Tic-Tac-Toe</p><p><b>C / C++:</b> Elden Rouge, Nomorod, Text Based Fighting Game, Text Based Bank Simulator, and Text Based Tic-Tac-Toe.</p></div></details>
+      </section>
 
-    <h2>// TECHNICAL_STATS</h2>
-    <div class="grid">
-        <div class="stat-card">
-            <h3>DEV SKILLS</h3>
-            <ul>
-                <li>C and C++</li>
-                <li>Unity & Unreal Engine</li>
-                <li>English & Filipino</li>
-            </ul>
-        </div>
-        <div class="stat-card">
-            <h3>CREATIVE</h3>
-            <ul>
-                <li>Pixel Art & Animation</li>
-                <li>Visual Design (Image/Video)</li>
-                <li>AI Tools</li>
-                <li>Research Tools</li>
-            </ul>
-        </div>
-    </div>
+      <section class="stats-section" id="skills" aria-labelledby="skills-title">
+        <div><p class="section-number">03 / CHARACTER STATS</p><h2 id="skills-title">Tools in my<br />adventure pack.</h2></div>
+        <div class="stat-list"><div class="stat-row"><span>Game engines</span><b>Unity · Unreal</b></div><div class="stat-row"><span>Languages</span><b>C · C++</b></div><div class="stat-row"><span>Creative craft</span><b>Pixel art · Animation</b></div><div class="stat-row"><span>Visual work</span><b>Image · Video design</b></div><div class="stat-row"><span>Languages spoken</span><b>English · Filipino</b></div></div>
+      </section>
 
-    <h2>// CERTIFICATIONS</h2>
-    <div class="cert-grid">
-        <div class="cert-card">
-            <img src="cert1.png" alt="Cert 1">
-            <p>Unity Junior Programmer Certification</p>
-        </div>
-        <div class="cert-card">
-            <img src="cert2.png" alt="Cert 2">
-            <p>Unity Essentials Certification</p>
-        </div>
-    </div>
-</div>
+      <section class="credentials" id="credentials" aria-labelledby="credentials-title">
+        <div class="section-heading"><div><p class="section-number">04 / EARNED BADGES</p><h2 id="credentials-title">Certified player.</h2></div><a href="resume.pdf" target="_blank" rel="noreferrer" class="text-link">View full résumé ↗</a></div>
+        <div class="badge-grid"><figure><img src="cert1.png" alt="Unity Junior Programmer Certification" /><figcaption><span>BADGE 01</span>Unity Junior Programmer</figcaption></figure><figure><img src="cert2.png" alt="Unity Essentials Certification" /><figcaption><span>BADGE 02</span>Unity Essentials</figcaption></figure></div>
+      </section>
 
-</body>
+      <footer><p>Thanks for looking through my binder.</p><p>© <span id="year"></span> Naomi Inoferio</p></footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>

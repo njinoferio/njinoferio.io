@@ -1,0 +1,319 @@
+/* Dedicated accessibility layer — kept separate to prevent old theme rules from reducing contrast. */
+.author-page,
+.projects-page,
+.contact-page {
+  background: #f5f8f3 !important;
+  color: #173628 !important;
+}
+
+.author-page h2,
+.author-page p,
+.author-page span,
+.author-page .hand-note,
+.author-page .author-note > p:not(.hand-note),
+.projects-page h2,
+.projects-page p,
+.projects-page span,
+.contact-page h2,
+.contact-page p,
+.contact-page label {
+  color: #173628 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+.author-page .hand-note,
+.author-page .author-note > p:not(.hand-note),
+.projects-page .page-heading p,
+.contact-page .contact-copy > p:not(.hand-note) {
+  color: #416653 !important;
+}
+
+.author-page .washi {
+  background: #1c5039 !important;
+  color: #f6fbf3 !important;
+}
+
+.stats-page {
+  background: #f5f8f3 !important;
+  color: #173628 !important;
+}
+
+.stats-page .page-kicker,
+.stats-page h2,
+.stats-page .stats-intro,
+.stats-page .skill-list span,
+.stats-page .skill-list b {
+  color: #173628 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+.stats-page .stats-intro { color: #416653 !important; }
+.stats-page .page-kicker { color: #28533d !important; }
+.stats-page .skill-list,
+.stats-page .skill-list div { border-color: #799681 !important; }
+.stats-page .skill-list span { font-weight: 700 !important; }
+.stats-page .skill-list b { font-weight: 600 !important; }
+
+.stats-layout {
+  grid-template-columns: minmax(0, 1fr) !important;
+  max-width: 960px;
+}
+
+.credentials-list {
+  margin-top: 44px;
+  padding: 26px 28px;
+  background: #e5eee2;
+  border-left: 4px solid #3d7354;
+  color: #173628;
+}
+
+.credentials-list .credential-eyebrow {
+  margin: 0 0 8px;
+  color: #3d7354 !important;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.credentials-list h3 {
+  margin: 0 0 16px;
+  color: #173628 !important;
+  font-size: clamp(1.45rem, 2.3vw, 2rem);
+}
+
+.credentials-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.credentials-list li {
+  color: #315c45 !important;
+  font-weight: 700;
+}
+
+.credentials-list li::before {
+  content: '✓ ';
+  color: #3d7354;
+}
+
+/* Minimal hero art: removes the broad diagonal blocks in favour of a quiet frame and marker. */
+.hero-visual {
+  background: linear-gradient(145deg, #1f5137, #5d9671) !important;
+  animation: none !important;
+}
+
+.hero-visual::before {
+  background: none !important;
+  opacity: 1 !important;
+}
+
+.hero-visual::after {
+  inset: 13% !important;
+  background: none !important;
+  border: 1px solid #d6ecd0 !important;
+}
+
+.hero-visual p {
+  color: #f4f8ef !important;
+}
+
+.hero-visual p::before {
+  content: '✦';
+  display: block;
+  margin-bottom: 12px;
+  color: #c8e8c0;
+  font-size: 1.5rem;
+}
+
+.author-card-copy,
+.author-card-copy p,
+.author-card-copy h2,
+.author-card-copy span {
+  color: #f4f8ef !important;
+  opacity: 1 !important;
+}
+
+.projects-page .in-progress-section > .page-kicker,
+.projects-page .past-divider > .page-kicker {
+  color: #28533d !important;
+  font-weight: 800;
+  opacity: 1 !important;
+}
+
+.projects-page .in-progress-section h3,
+.projects-page .past-divider h3 {
+  color: #173628 !important;
+  font-family: Inter, Arial, sans-serif !important;
+  font-size: clamp(2rem, 4vw, 3.3rem) !important;
+  font-weight: 800 !important;
+}
+
+.credentials-list {
+  max-width: 960px;
+}
+
+.credential-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.credential-grid figure {
+  margin: 0;
+  padding: 14px;
+  background: #f8fbf6;
+  border: 1px solid #c9dac9;
+}
+
+.credential-grid img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background: #f8fbf6;
+}
+
+.credential-grid figcaption {
+  margin-top: 10px;
+  color: #173628 !important;
+  font-weight: 800;
+}
+
+.contact-page .contact-links a {
+  color: #173628 !important;
+  font-weight: 800;
+  border-bottom-color: #4b8060 !important;
+  opacity: 1 !important;
+}
+
+.contact-page .contact-links a:hover {
+  color: #2e6b4b !important;
+}
+
+.message-card {
+  transform: none !important;
+  rotate: none !important;
+  box-shadow: none !important;
+  background: #f8fbf6 !important;
+}
+
+.message-card .card-label,
+.message-card label {
+  color: #173628 !important;
+  opacity: 1 !important;
+}
+
+.message-card input,
+.message-card textarea {
+  background: #ffffff !important;
+  border-color: #8da892 !important;
+  color: #173628 !important;
+}
+
+@media (max-width: 620px) {
+  .credential-grid { grid-template-columns: 1fr; }
+}
+
+.author-layout {
+  display: block !important;
+  max-width: 760px !important;
+}
+
+.author-note {
+  max-width: 760px;
+}
+
+.game-card h3,
+.in-progress-grid .game-card h3,
+.game-card p,
+.in-progress-grid .game-card p,
+.game-card small,
+.in-progress-grid .game-card small {
+  font-family: Inter, Arial, sans-serif !important;
+  opacity: 1 !important;
+}
+
+.game-card h3,
+.in-progress-grid .game-card h3 {
+  color: #f5fbf2 !important;
+  font-weight: 800 !important;
+  letter-spacing: -.055em;
+}
+
+.game-card p,
+.in-progress-grid .game-card p {
+  color: #c6e1c7 !important;
+  font-weight: 700 !important;
+}
+
+.game-card small,
+.in-progress-grid .game-card small {
+  color: #f0f8ed !important;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.work-link,
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: auto;
+  min-height: 0;
+  padding: 10px 14px !important;
+  background: #d9edcf !important;
+  border: 0 !important;
+  color: #122218 !important;
+  font: 700 9px/1 Manrope, Arial, sans-serif !important;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.work-link:hover,
+.resume-link:hover {
+  background: #eff9ed !important;
+  color: #122218 !important;
+}
+
+.pending-link {
+  cursor: default;
+  opacity: .8;
+}
+
+@media (max-width: 760px) {
+  .header-actions { gap: 5px; }
+  .work-link { display: none; }
+}
+
+.game-card h3,
+.in-progress-grid .game-card h3 {
+  font-size: clamp(1.75rem, 2.2vw, 2.35rem) !important;
+  line-height: 1.02 !important;
+  margin: .35rem 0 .65rem !important;
+}
+
+.game-card p,
+.in-progress-grid .game-card p {
+  font-size: .72rem !important;
+  line-height: 1.25 !important;
+  letter-spacing: .04em !important;
+}
+
+.game-card small,
+.in-progress-grid .game-card small {
+  font-size: .9rem !important;
+  line-height: 1.45 !important;
+}

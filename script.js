@@ -9,8 +9,10 @@ const projects = {
   'Text Based Tic-Tac-Toe': { detail: 'A classic Tic-Tac-Toe game implemented in C.', url: '', image: '' },
   'Text Based Bank Simulator': { detail: 'A text-based banking simulation built with C.', url: '', image: '' },
   'Elden Rouge': { detail: 'A C++ project exploring gameplay through code.', url: '', image: '' },
-  'Nomorod': { detail: 'A C++ project built as part of my programming collection.', url: '', image: '' },
-  'Mailers Mailroom': { detail: 'An in-progress Unity project currently being developed.', url: '', image: '' }
+  'Nomorod': { detail: 'A text-based, turn-based C++ creature-battling adventure inspired by classic monster-collection games.', url: '', image: '' },
+  'Personal OpenGL Game Engine': { detail: 'A personal game engine built from the ground up with OpenGL, C++, and CMake.', url: '', image: '' },
+  'Mailers Mailroom': { detail: 'An in-progress Unity project currently being developed.', url: '', image: '' },
+  'Kandili Sanctuary': { detail: 'An in-progress Unity project currently being developed.', url: '', image: '' }
 };
 
 const pages = [...document.querySelectorAll('.page')];
@@ -18,13 +20,23 @@ const tabs = [...document.querySelectorAll('[data-go]')];
 const pageCount = document.getElementById('page-count');
 const pageNames = ['COVER', 'ABOUT', 'GAMES', 'BADGES', 'CONTACT'];
 pages.forEach((page, index) => { page.dataset.tab = pageNames[index]; });
-document.querySelector('.author-card-copy p').textContent = 'PROFILE / 001';
-document.querySelector('.projects-page .page-kicker').textContent = '02 / SELECTED WORK';
-document.querySelector('.projects-page .page-heading h2').innerHTML = 'Games and<br />interactive work.';
+document.querySelector('.author-card')?.remove();
+document.querySelector('.author-page .page-kicker').textContent = '01 / ABOUT ME';
+document.querySelector('.projects-page .page-kicker').textContent = '02 / PROJECTS';
+document.querySelector('.projects-page .page-heading h2').innerHTML = 'Projects.';
 document.querySelector('.projects-page .corner-stamp').textContent = 'SELECTED PROJECTS';
 document.querySelector('.stats-page .page-kicker').textContent = '03 / SKILLS & CREDENTIALS';
 document.querySelector('.stats-page h2').innerHTML = 'Capabilities,<br />tools & craft.';
 document.querySelector('.stats-page .stats-intro').textContent = 'A balance of game development, creative direction, and practical technology.';
+document.querySelector('.cover-intro').textContent = 'I create thoughtful game experiences where atmosphere, interaction, and craft come together.';
+document.querySelector('.author-note h2').textContent = 'I build game experiences with intention and curiosity.';
+document.querySelectorAll('.author-note > p:not(.hand-note)')[0].textContent = 'I am a game developer and pixel artist drawn to expressive worlds, satisfying systems, and details that invite players to stay curious.';
+document.querySelectorAll('.author-note > p:not(.hand-note)')[1].textContent = 'I believe it is never too late to try something new, and there is always room to learn, refine, and improve.';
+document.querySelector('.projects-page .page-heading p').textContent = 'A selection of game, programming, and community-focused projects I enjoyed bringing to life.';
+document.querySelector('.contact-copy h2').innerHTML = 'Let’s create<br />something memorable.';
+document.querySelector('.contact-copy > p:not(.hand-note)').textContent = 'Have a project, collaboration, or opportunity in mind? I would be happy to hear from you.';
+document.querySelector('[data-go="1"]').textContent = 'About me';
+document.querySelector('[data-go="2"]').textContent = 'Projects';
 const categories = {
   'Paramnesia': 'PSYCHOLOGICAL HORROR',
   'Scars of Harpuia': 'MULTIPLAYER · IN PROGRESS',
@@ -37,7 +49,9 @@ const categories = {
   'Text Based Tic-Tac-Toe': 'CLASSIC BOARD GAME',
   'Text Based Bank Simulator': 'SIMULATION',
   'Elden Rouge': 'PROGRAMMING PROJECT',
-  'Nomorod': 'PROGRAMMING PROJECT'
+  'Nomorod': 'TEXT-BASED TURN-BASED ADVENTURE',
+  'Personal OpenGL Game Engine': 'CUSTOM GAME ENGINE',
+  'Kandili Sanctuary': 'IN PROGRESS'
 };
 window.addEventListener('load', () => {
   setTimeout(() => document.body.classList.replace('loading', 'opened'), 180);
@@ -76,6 +90,7 @@ makeExtraCard('Text Based Tic-Tac-Toe', 'C LANGUAGE', 'CODE / 02', 'T');
 makeExtraCard('Text Based Bank Simulator', 'C LANGUAGE', 'CODE / 03', 'B');
 makeExtraCard('Elden Rouge', 'C++ LANGUAGE', 'CODE / 04', 'E');
 makeExtraCard('Nomorod', 'C++ LANGUAGE', 'CODE / 05', 'N');
+makeExtraCard('Personal OpenGL Game Engine', 'CUSTOM GAME ENGINE', 'ENGINE / 01', 'G');
 document.querySelectorAll('.game-card').forEach(card => {
   if (card.querySelector('h3')?.textContent.trim() === 'Tower Defense') card.remove();
 });
@@ -87,10 +102,21 @@ pastProjects.before(inProgress);
 const scarsCard = [...pastProjects.querySelectorAll('.game-card')].find(card => card.querySelector('h3')?.textContent.trim() === 'Scars of Harpuia');
 if (scarsCard) inProgress.querySelector('.in-progress-grid').append(scarsCard);
 makeExtraCard('Mailers Mailroom', 'UNITY · IN PROGRESS', 'UNITY / 05', 'M', inProgress.querySelector('.in-progress-grid'));
+makeExtraCard('Kandili Sanctuary', 'UNITY · IN PROGRESS', 'UNITY / 06', 'K', inProgress.querySelector('.in-progress-grid'));
 document.querySelector('.archive')?.remove();
-const languageSkills = ['HTML', 'CSS', 'Java'];
 const skillList = document.querySelector('.skill-list');
-languageSkills.forEach(language => skillList.insertAdjacentHTML('beforeend', `<div><span>LANGUAGE</span><b>${language}</b></div>`));
+skillList.innerHTML = [
+  ['GAME ENGINES', 'Unity · Unreal'],
+  ['PROGRAMMING LANGUAGES', 'C · C++ · C# · Java · JavaScript'],
+  ['WEB TECHNOLOGIES', 'HTML · CSS · React · JSON'],
+  ['GRAPHICS & DEVELOPMENT', 'OpenGL · CMake'],
+  ['DESIGN & CREATIVE TOOLS', 'Figma · Pixel art · Animation · Image & video design']
+].map(([label, value]) => `<div><span>${label}</span><b>${value}</b></div>`).join('');
+const credentials = document.querySelector('.badges');
+if (credentials) {
+  credentials.className = 'credentials-list';
+  credentials.innerHTML = `<p class="credential-eyebrow">CREDENTIALS</p><h3>Development foundations</h3><div class="credential-grid"><figure><img src="cert1.png" alt="Unity Junior Programmer certification" /><figcaption>Unity Junior Programmer</figcaption></figure><figure><img src="cert2.png" alt="Unity Essentials certification" /><figcaption>Unity Essentials</figcaption></figure></div>`;
+}
 const pastDivider = document.createElement('div');
 pastDivider.className = 'past-divider';
 pastProjects.before(pastDivider);
@@ -112,7 +138,9 @@ const techLabels = {
   'Text Based Tic-Tac-Toe': 'C',
   'Text Based Bank Simulator': 'C',
   'Elden Rouge': 'C++',
-  'Nomorod': 'C++'
+  'Nomorod': 'C++',
+  'Personal OpenGL Game Engine': 'C++ · OPENGL · CMAKE',
+  'Kandili Sanctuary': 'UNITY'
 };
 document.querySelectorAll('.game-card').forEach(card => {
   const title = card.querySelector('h3')?.textContent.trim();
@@ -124,7 +152,8 @@ document.querySelectorAll('.game-card').forEach(card => {
   const title = card.querySelector('h3').textContent.trim();
   const project = projects[title];
   if (!project) return;
-  card.insertAdjacentHTML('beforeend', `<span class="image-hint">ADD A GAME SCREENSHOT</span><div class="card-peek"><p>${project.detail}</p><strong>${project.url ? 'Open project ↗' : 'Project link ready'}</strong><span>${project.url ? 'Click to visit the game page' : 'Add a link in script.js to make this card clickable'}</span></div>`);
+  const tech = techLabels[title] || 'PROJECT';
+  card.insertAdjacentHTML('beforeend', `<span class="image-hint">ADD A GAME SCREENSHOT</span><div class="card-peek"><span>BUILT WITH · ${tech}</span><p>${project.detail}</p><strong>${project.url ? 'Open project ↗' : 'Project overview'}</strong>${project.url ? '<span>Click to visit the game page</span>' : ''}</div>`);
   if (project.image) {
     card.classList.add('has-image');
     card.style.setProperty('--project-image', `url("${project.image}")`);

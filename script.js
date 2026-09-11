@@ -191,6 +191,16 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const contactForm = document.getElementById('contact-form');
 contactForm.action = 'https://formsubmit.co/njinoferio@gmail.com';
 contactForm.method = 'POST';
-contactForm.querySelector('[name="name"]').placeholder = 'Naomi Sample';
-contactForm.querySelector('[name="email"]').placeholder = 'naomisample@example.com';
+contactForm.querySelector('[name="name"]').placeholder = 'Naomi Inoferio';
+contactForm.querySelector('[name="email"]').placeholder = 'njinoferio@gmail.com';
 contactForm.insertAdjacentHTML('afterbegin', '<input type="hidden" name="_subject" value="New portfolio message" /><input type="hidden" name="_captcha" value="false" />');
+const contactLabels = contactForm.querySelectorAll('label');
+contactLabels[0].childNodes[0].nodeValue = 'Name';
+contactLabels[1].childNodes[0].nodeValue = 'Email';
+contactLabels[1].insertAdjacentHTML('afterend', '<label>Enquiry type<select name="enquiry_type" required><option value="" selected disabled>Select an option</option><option value="Project">Project</option><option value="Collaboration">Collaboration</option><option value="Opportunity">Opportunity</option><option value="Other">Other</option></select></label>');
+contactLabels[2].childNodes[0].nodeValue = 'Message';
+contactForm.querySelector('textarea').placeholder = 'Tell me more about your enquiry...';
+contactForm.addEventListener('submit', () => {
+  const enquiryType = contactForm.querySelector('[name="enquiry_type"]').value;
+  contactForm.querySelector('[name="_subject"]').value = `Portfolio enquiry: ${enquiryType}`;
+});

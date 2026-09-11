@@ -343,8 +343,20 @@
 }
 
 .message-card input,
-.message-card textarea {
+.message-card textarea,
+.message-card select {
   font-size: .9rem !important;
+}
+
+.message-card select {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #8da892;
+  background: #ffffff;
+  color: #173628;
+  font-family: Manrope, Arial, sans-serif;
 }
 
 .message-card input::placeholder,

@@ -190,7 +190,7 @@ const revealObserver = new IntersectionObserver(entries => {
 document.querySelectorAll('.author-layout,.page-heading,.project-grid,.in-progress-section,.past-divider,.stats-layout,.contact-layout,.badges').forEach(element => { element.classList.add('reveal'); revealObserver.observe(element); });
 document.getElementById('year').textContent = new Date().getFullYear();
 const contactForm = document.getElementById('contact-form');
-contactForm.action = 'https://formsubmit.co/njinoferio@gmail.com';
+contactForm.action = 'https://formspree.io/f/xkjnypkg';
 contactForm.method = 'POST';
 contactForm.querySelector('[name="name"]').placeholder = 'Naomi Inoferio';
 contactForm.querySelector('[name="email"]').placeholder = 'njinoferio@gmail.com';

@@ -35,9 +35,11 @@ document.querySelectorAll('.author-note > p:not(.hand-note)')[1].textContent = '
 document.querySelector('.projects-page .page-heading p').textContent = 'A selection of game, programming, and community-focused projects I enjoyed bringing to life.';
 document.querySelector('.contact-copy h2').innerHTML = 'Let’s create<br />something memorable.';
 document.querySelector('.contact-copy > p:not(.hand-note)').textContent = 'Have a project, collaboration, or opportunity in mind? I would be happy to hear from you.';
-document.querySelector('[data-go="1"]').textContent = 'About me';
+document.querySelector('[data-go="1"]').textContent = 'About';
 document.querySelector('[data-go="2"]').textContent = 'Projects';
 document.querySelector('.work-link').href = 'https://canva.link/tr5pm6n4q8vkvb2';
+document.querySelector('.author-note .washi').insertAdjacentHTML('beforebegin', '<p class="currently-exploring"><strong>Currently exploring:</strong> cozy game design, pixel-art animation, and expressive visual styles.</p>');
+document.querySelector('.binder-footer').insertAdjacentHTML('afterbegin', '<div class="footer-links"><a href="https://canva.link/tr5pm6n4q8vkvb2" target="_blank" rel="noreferrer">Art portfolio ↗</a><a href="https://canva.link/naomi-inoferio-resume" target="_blank" rel="noreferrer">View résumé ↗</a></div>');
 const categories = {
   'Paramnesia': 'PSYCHOLOGICAL HORROR',
   'Scars of Harpuia': 'MULTIPLAYER · IN PROGRESS',
@@ -154,7 +156,7 @@ document.querySelectorAll('.game-card').forEach(card => {
   const project = projects[title];
   if (!project) return;
   const tech = techLabels[title] || 'PROJECT';
-  card.insertAdjacentHTML('beforeend', `<span class="image-hint">ADD A GAME SCREENSHOT</span><div class="card-peek"><span>BUILT WITH · ${tech}</span><p>${project.detail}</p><strong>${project.url ? 'Open project ↗' : 'Project overview'}</strong>${project.url ? '<span>Click to visit the game page</span>' : ''}</div>`);
+  card.insertAdjacentHTML('beforeend', `<span class="image-hint">COMING SOON</span><div class="card-peek"><span>BUILT WITH · ${tech}</span><p>${project.detail}</p><strong>${project.url ? 'Open project ↗' : 'Project overview'}</strong>${project.url ? '<span>Click to visit the game page</span>' : ''}</div>`);
   if (project.image) {
     card.classList.add('has-image');
     card.style.setProperty('--project-image', `url("${project.image}")`);
@@ -201,7 +203,26 @@ contactLabels[1].childNodes[0].nodeValue = 'Email';
 contactLabels[1].insertAdjacentHTML('afterend', '<label>Enquiry type<select name="enquiry_type" required><option value="" selected disabled>Select an option</option><option value="Project">Project</option><option value="Collaboration">Collaboration</option><option value="Opportunity">Opportunity</option><option value="Other">Other</option></select></label>');
 contactLabels[2].childNodes[0].nodeValue = 'Message';
 contactForm.querySelector('textarea').placeholder = 'Tell me more about your enquiry...';
-contactForm.addEventListener('submit', () => {
+contactForm.addEventListener('submit', async event => {
+  event.preventDefault();
   const enquiryType = contactForm.querySelector('[name="enquiry_type"]').value;
   contactForm.querySelector('[name="_subject"]').value = `Portfolio enquiry: ${enquiryType}`;
+  const status = contactForm.querySelector('.form-status');
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  status.textContent = 'Sending your message…';
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { Accept: 'application/json' }
+    });
+    if (!response.ok) throw new Error('Message delivery failed');
+    contactForm.reset();
+    status.textContent = 'Thank you — your message has been sent.';
+  } catch {
+    status.textContent = 'Sorry, your message could not be sent. Please email Naomi directly.';
+  } finally {
+    submitButton.disabled = false;
+  }
 });

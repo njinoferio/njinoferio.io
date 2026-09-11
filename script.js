@@ -37,6 +37,7 @@ document.querySelector('.contact-copy h2').innerHTML = 'Let’s create<br />some
 document.querySelector('.contact-copy > p:not(.hand-note)').textContent = 'Have a project, collaboration, or opportunity in mind? I would be happy to hear from you.';
 document.querySelector('[data-go="1"]').textContent = 'About me';
 document.querySelector('[data-go="2"]').textContent = 'Projects';
+document.querySelector('.work-link').href = 'https://canva.link/tr5pm6n4q8vkvb2';
 const categories = {
   'Paramnesia': 'PSYCHOLOGICAL HORROR',
   'Scars of Harpuia': 'MULTIPLAYER · IN PROGRESS',

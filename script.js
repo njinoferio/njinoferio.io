@@ -28,7 +28,7 @@ document.querySelector('.projects-page .corner-stamp').textContent = 'SELECTED P
 document.querySelector('.stats-page .page-kicker').textContent = '03 / SKILLS & CREDENTIALS';
 document.querySelector('.stats-page h2').innerHTML = 'Capabilities,<br />tools & craft.';
 document.querySelector('.stats-page .stats-intro').textContent = 'A balance of game development, creative direction, and practical technology.';
-document.querySelector('.cover-intro').textContent = 'I create thoughtful game experiences where atmosphere, interaction, and craft come together.';
+document.querySelector('.cover-intro').textContent = 'I’m drawn to cozy, chill games that feel like a fun escape from everyday life. I build playful worlds where people can unwind, explore, and enjoy the moment.';
 document.querySelector('.author-note h2').textContent = 'I build game experiences with intention and curiosity.';
 document.querySelectorAll('.author-note > p:not(.hand-note)')[0].textContent = 'I am a game developer and pixel artist drawn to expressive worlds, satisfying systems, and details that invite players to stay curious.';
 document.querySelectorAll('.author-note > p:not(.hand-note)')[1].textContent = 'I believe it is never too late to try something new, and there is always room to learn, refine, and improve.';
@@ -188,13 +188,9 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: .15 });
 document.querySelectorAll('.author-layout,.page-heading,.project-grid,.in-progress-section,.past-divider,.stats-layout,.contact-layout,.badges').forEach(element => { element.classList.add('reveal'); revealObserver.observe(element); });
 document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('contact-form').addEventListener('submit', event => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  const status = form.querySelector('.form-status');
-  const data = new FormData(form);
-  const subject = `Portfolio message from ${data.get('name')}`;
-  const body = `Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`;
-  window.location.href = `mailto:${form.dataset.recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  status.textContent = 'Opening your email app…';
-});
+const contactForm = document.getElementById('contact-form');
+contactForm.action = 'https://formsubmit.co/njinoferio@gmail.com';
+contactForm.method = 'POST';
+contactForm.querySelector('[name="name"]').placeholder = 'Naomi Sample';
+contactForm.querySelector('[name="email"]').placeholder = 'naomisample@example.com';
+contactForm.insertAdjacentHTML('afterbegin', '<input type="hidden" name="_subject" value="New portfolio message" /><input type="hidden" name="_captcha" value="false" />');

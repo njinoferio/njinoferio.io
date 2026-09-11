@@ -1,7 +1,7 @@
 const projects = {
-  'Paramnesia': { detail: 'A psychological horror game made in Unity, built around unsettling discoveries and atmosphere.', url: '', image: '' },
-  'Scars of Harpuia': { detail: 'A multiplayer project focused on shared adventure and player connection.', url: '', image: '' },
-  'Mythos Manuscripts': { detail: 'An educational game that turns folklore and learning into something interactive.', url: '', image: '' },
+  'Paramnesia': { detail: 'A psychological horror game made in Unity, built around unsettling discoveries and atmosphere.', url: '', image: 'paramnesia.jpeg' },
+  'Scars of Harpuia': { detail: 'A multiplayer project currently in beta testing, focused on shared adventure and player connection.', url: '', image: 'scars-of-harpuia.png' },
+  'Mythos Manuscripts': { detail: 'An educational game that turns folklore and learning into something interactive.', url: '', image: 'mythos-manuscripts.jpeg' },
   'Bounce': { detail: 'A compact Unreal physics experiment focused on movement that feels great.', url: '', image: '' },
   'QuestLog': { detail: 'A web-hosted community concept for players to gather, share, and connect.', url: '', image: '' },
   'Local Multiplayer Tic-Tac-Toe': { detail: 'A locally hosted Unity multiplayer game designed for shared play.', url: '', image: '' },
@@ -11,8 +11,12 @@ const projects = {
   'Elden Rouge': { detail: 'A C++ project exploring gameplay through code.', url: '', image: '' },
   'Nomorod': { detail: 'A text-based, turn-based C++ creature-battling adventure inspired by classic monster-collection games.', url: '', image: '' },
   'Personal OpenGL Game Engine': { detail: 'A personal game engine built from the ground up with OpenGL, C++, and CMake.', url: '', image: '' },
-  'Mailers Mailroom': { detail: 'An in-progress Unity project currently being developed.', url: '', image: '' },
-  'Kandili Sanctuary': { detail: 'An in-progress Unity project currently being developed.', url: '', image: '' }
+  'White Room': { detail: 'A Unity environment study focused on designing a residential interior with a clean, considered atmosphere.', url: '', image: '' },
+  'Museum Environment': { detail: 'A Unity environment project exploring visual storytelling through a museum-inspired space.', url: '', image: '' },
+  'Horror Microgame': { detail: 'A short Unity horror experience built around mood, pacing, and a focused player journey.', url: '', image: '' },
+  'Bank Environment': { detail: 'An Unreal environment study focused on creating a detailed and believable bank interior.', url: '', image: '' },
+  'Mailers Mailroom': { detail: 'An early Unity prototype currently being shaped and tested.', url: '', image: '' },
+  'Kandili Sanctuary': { detail: 'A Unity project in its prototype phase, currently being developed.', url: '', image: 'kandili-sanctuary.png' }
 };
 
 const pages = [...document.querySelectorAll('.page')];
@@ -42,19 +46,23 @@ document.querySelector('.author-note .washi').insertAdjacentHTML('beforebegin', 
 document.querySelector('.binder-footer').insertAdjacentHTML('afterbegin', '<div class="footer-links"><a href="https://canva.link/tr5pm6n4q8vkvb2" target="_blank" rel="noreferrer">Art portfolio ↗</a><a href="https://canva.link/naomi-inoferio-resume" target="_blank" rel="noreferrer">View résumé ↗</a></div>');
 const categories = {
   'Paramnesia': 'PSYCHOLOGICAL HORROR',
-  'Scars of Harpuia': 'MULTIPLAYER · IN PROGRESS',
+  'Scars of Harpuia': 'MULTIPLAYER · BETA TESTING',
   'Mythos Manuscripts': 'EDUCATIONAL',
   'Bounce': 'PHYSICS',
   'QuestLog': 'COMMUNITY PLATFORM',
   'Local Multiplayer Tic-Tac-Toe': 'LOCAL MULTIPLAYER',
-  'Mailers Mailroom': 'IN PROGRESS',
+  'Mailers Mailroom': 'EARLY PROTOTYPE',
   'Text Based Fighting Game': 'COMMAND-LINE COMBAT',
   'Text Based Tic-Tac-Toe': 'CLASSIC BOARD GAME',
   'Text Based Bank Simulator': 'SIMULATION',
   'Elden Rouge': 'PROGRAMMING PROJECT',
   'Nomorod': 'TEXT-BASED TURN-BASED ADVENTURE',
   'Personal OpenGL Game Engine': 'CUSTOM GAME ENGINE',
-  'Kandili Sanctuary': 'IN PROGRESS'
+  'White Room': 'RESIDENTIAL ENVIRONMENT',
+  'Museum Environment': 'ENVIRONMENT DESIGN',
+  'Horror Microgame': 'SHORT HORROR EXPERIENCE',
+  'Bank Environment': 'ARCHITECTURAL ENVIRONMENT',
+  'Kandili Sanctuary': 'PROTOTYPE PHASE'
 };
 window.addEventListener('load', () => {
   setTimeout(() => document.body.classList.replace('loading', 'opened'), 180);
@@ -94,6 +102,10 @@ makeExtraCard('Text Based Bank Simulator', 'C LANGUAGE', 'CODE / 03', 'B');
 makeExtraCard('Elden Rouge', 'C++ LANGUAGE', 'CODE / 04', 'E');
 makeExtraCard('Nomorod', 'C++ LANGUAGE', 'CODE / 05', 'N');
 makeExtraCard('Personal OpenGL Game Engine', 'CUSTOM GAME ENGINE', 'ENGINE / 01', 'G');
+makeExtraCard('White Room', 'RESIDENTIAL ENVIRONMENT', 'UNITY / 05', 'W');
+makeExtraCard('Museum Environment', 'ENVIRONMENT DESIGN', 'UNITY / 06', 'M');
+makeExtraCard('Horror Microgame', 'SHORT HORROR EXPERIENCE', 'UNITY / 07', 'H');
+makeExtraCard('Bank Environment', 'ARCHITECTURAL ENVIRONMENT', 'UNREAL / 02', 'B');
 document.querySelectorAll('.game-card').forEach(card => {
   if (card.querySelector('h3')?.textContent.trim() === 'Tower Defense') card.remove();
 });
@@ -143,6 +155,10 @@ const techLabels = {
   'Elden Rouge': 'C++',
   'Nomorod': 'C++',
   'Personal OpenGL Game Engine': 'C++ · OPENGL · CMAKE',
+  'White Room': 'UNITY',
+  'Museum Environment': 'UNITY',
+  'Horror Microgame': 'UNITY',
+  'Bank Environment': 'UNREAL',
   'Kandili Sanctuary': 'UNITY'
 };
 document.querySelectorAll('.game-card').forEach(card => {
@@ -160,6 +176,7 @@ document.querySelectorAll('.game-card').forEach(card => {
   if (project.image) {
     card.classList.add('has-image');
     card.style.setProperty('--project-image', `url("${project.image}")`);
+    card.style.setProperty('--project-position', title === 'Scars of Harpuia' ? 'center 38%' : title === 'Paramnesia' ? 'center 35%' : 'center 52%');
   }
   if (project.url) {
     card.classList.add('is-linked');

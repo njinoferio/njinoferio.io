@@ -62,7 +62,7 @@
 <body class="loading">
   <div class="ambient-grain"></div>
   <main class="binder-shell" aria-label="Naomi Inoferio's portfolio binder">
-    <header class="binder-top"><a class="logo" href="#cover">NJI<span>_</span></a><nav class="header-nav" aria-label="Portfolio sections"><button data-go="0" class="selected">Home</button><button data-go="1">About</button><button data-go="2">Projects</button><button data-go="3">Skills</button><button data-go="4">Contact</button></nav><div class="header-actions"><a class="work-link" href="https://canva.link/naomi-inoferio-creative-portfolio" target="_blank" rel="noreferrer">Art portfolio ↗</a><a class="resume-link" href="https://canva.link/naomi-inoferio-resume" target="_blank" rel="noreferrer">View résumé ↗</a></div></header>
+    <header class="binder-top"><a class="logo" href="#cover">NJVI<span>_</span></a><nav class="header-nav" aria-label="Portfolio sections"><button data-go="0" class="selected">Home</button><button data-go="1">About</button><button data-go="2">Projects</button><button data-go="3">Skills</button><button data-go="4">Contact</button></nav><div class="header-actions"><a class="work-link" href="https://canva.link/naomi-inoferio-creative-portfolio" target="_blank" rel="noreferrer">Art portfolio ↗</a><a class="resume-link" href="https://canva.link/naomi-inoferio-resume" target="_blank" rel="noreferrer">View résumé ↗</a></div></header>
     <div class="binder-body">
       <div class="rings" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
       <div class="book-edge" aria-hidden="true"></div>
@@ -70,6 +70,7 @@
         <section class="page cover-page active" id="cover" data-page="0" aria-label="Cover page">
           <div class="cover-label">PORTFOLIO / 2026</div>
           <div class="cover-content"><p class="micro">GAME DEV STUDENT · PIXEL ARTIST</p><h1>Naomi<br /><em>Inoferio</em></h1><p class="cover-intro">Cozy games, curious worlds, and handmade pixels.</p><button class="primary-button next-page">Explore my work <span>→</span></button></div>
+          <figure class="hero-portrait"><img src="naomi-portrait.png" alt="Naomi Inoferio" /><figcaption>NAOMI INOFERIO · GAME DEVELOPER</figcaption></figure>
           <div class="cover-tape">COLLECTED WITH CARE</div><div class="cover-stars" aria-hidden="true">✦ &nbsp; ✦<br /> &nbsp; ✦</div>
         </section>
 
@@ -141,6 +142,61 @@
     padding: 9px 12px;
     transform: none !important;
     box-sizing: border-box;
+  }
+
+  .binder-top .logo span { color: #b9d7b9 !important; }
+
+  .game-card:after {
+    background-size: cover !important;
+    background-position: var(--project-position, center) !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .cover-page .hero-portrait {
+    position: relative;
+    align-self: stretch;
+    min-height: 520px;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid #6a9474;
+    background: #183b2c;
+  }
+
+  .cover-page .hero-portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(9, 28, 19, 0.04), rgba(9, 28, 19, 0.45));
+    pointer-events: none;
+  }
+
+  .cover-page .hero-portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    object-position: 65% center;
+    filter: saturate(0.78) contrast(0.98);
+  }
+
+  .cover-page .hero-portrait figcaption {
+    position: absolute;
+    z-index: 1;
+    right: 18px;
+    bottom: 16px;
+    color: #f2f9ef;
+    font: 700 0.68rem/1.2 Manrope, Arial, sans-serif;
+    letter-spacing: 0.12em;
+  }
+
+  @media (max-width: 760px) {
+    .cover-page .hero-portrait,
+    .cover-page .hero-portrait img {
+      min-height: 360px;
+    }
+
+    .cover-page .hero-portrait img { object-position: 64% 35%; }
   }
 </style>
 <script src="script.js"></script>

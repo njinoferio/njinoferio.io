@@ -297,7 +297,7 @@ const sectionObserver = new IntersectionObserver(entries => {
 pages.forEach(page => sectionObserver.observe(page));
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
-}, { threshold: .15 });
+}, { threshold: .01 });
 document.querySelectorAll('.author-layout,.page-heading,.project-grid,.in-progress-section,.past-divider,.stats-layout,.contact-layout,.badges').forEach(element => { element.classList.add('reveal'); revealObserver.observe(element); });
 document.getElementById('year').textContent = new Date().getFullYear();
 const contactForm = document.getElementById('contact-form');

@@ -2,7 +2,13 @@ const projects = {
   'Paramnesia': { summary: 'A horror maze shaped by memory.', detail: 'A psychological horror game where memory is the map and every wrong turn makes the world less reliable.', url: '', image: 'paramnesia.jpeg' },
   'Scars of Harpuia': { summary: 'A co-op quest to break a curse.', detail: 'A co-op fantasy adventure where two players break a curse and prevent a continental war through friendship.', url: '', image: 'scars-of-harpuia.png' },
   'Mythos Manuscripts': { summary: 'A Greek-myth puzzle-platformer.', detail: 'A Greek-mythology learning adventure where players guide Gabby through puzzles, platforming, and legendary stories.', url: '', image: 'mythos-manuscripts.jpeg' },
-  'Bounce': { summary: 'A 3D physics platforming study.', detail: 'A 3D reimagining of the classic 2D Bounce concept, built around movement and physics.', url: '', image: '' },
+  'Bounce': {
+    summary: 'A 3D physics platforming study.',
+    detail: 'A 3D reimagining of the classic 2D Bounce concept, built around movement and physics.',
+    url: '',
+    image: 'bounce-01.png',
+    images: ['bounce-01.png', 'bounce-02.png', 'bounce-03.png', 'bounce-04.png', 'bounce-05.png']
+  },
   'QuestLog': { summary: 'A social platform for players.', detail: 'A web-hosted community concept for players to gather, share, and connect.', url: '', image: 'questlog.jpg' },
   'Local Multiplayer Tic-Tac-Toe': { summary: 'A shared local multiplayer classic.', detail: 'A locally hosted Unity multiplayer game designed for shared play.', url: '', image: '' },
   'Text Based Fighting Game': { summary: 'A command-line combat game.', detail: 'A command-line fighting game built with the C programming language.', url: '', image: '' },
@@ -10,14 +16,26 @@ const projects = {
   'Text Based Bank Simulator': { summary: 'A command-line banking simulation.', detail: 'A text-based banking simulation built with C.', url: '', image: '' },
   'Elden Rouge': { summary: 'A 2D action adventure.', detail: 'A 2D action adventure inspired by Elden Ring.', url: '', image: '' },
   'Nomorod': { summary: 'A text-based creature battler.', detail: 'A text-based, turn-based C++ creature-battling adventure inspired by classic monster-collection games.', url: '', image: '' },
-  'Personal OpenGL Game Engine': { summary: 'A custom OpenGL engine.', detail: 'A personal game engine built from the ground up with OpenGL, C++, and CMake.', url: '', image: '' },
+  'Personal OpenGL Game Engine': {
+    summary: 'A custom OpenGL engine.',
+    detail: 'A personal game engine built from the ground up with OpenGL, C++, and CMake.',
+    url: '',
+    image: 'personal-game-engine-01.png',
+    images: ['personal-game-engine-01.png', 'personal-game-engine-02.png']
+  },
   'White Room': { summary: 'A Unity house environment study.', detail: 'A Unity environment study focused on designing a residential interior with a clean, considered atmosphere.', url: '', image: '' },
   'Museum Environment': {
     summary: 'A Unity museum environment study.',
     detail: 'A Unity environment project exploring visual storytelling through a museum-inspired space.',
     url: '',
     image: 'museum-environment-01.png',
-    images: ['museum-environment-01.png', 'museum-environment-02.png']
+    images: [
+      'museum-environment-01.png',
+      'museum-environment-02.png',
+      'museum-environment-03.png',
+      'museum-environment-04.png',
+      'museum-environment-05.png'
+    ]
   },
   'Horror Microgame': { summary: 'A compact Unity horror experience.', detail: 'A short Unity horror experience built around mood, pacing, and a focused player journey.', url: '', image: '' },
   'Bank Environment': {
@@ -252,8 +270,13 @@ document.querySelectorAll('.game-card').forEach(card => {
   const role = projectRoles[title];
   const summary = card.querySelector('small');
   if (summary) summary.textContent = project.summary;
-  card.insertAdjacentHTML('beforeend', `<span class="image-hint">COMING SOON</span><div class="card-peek"><span>BUILT WITH · ${tech}</span><p>${project.detail}</p>${role ? `<span class="project-role">ROLE · ${role}</span>` : ''}<strong>${project.url ? 'Open project ↗' : 'Project overview'}</strong>${project.url ? '<span>Click to visit the game page</span>' : ''}</div>`);
   const previewImages = project.images?.length ? project.images : project.image ? [project.image] : [];
+  const imageHint = previewImages.length
+    ? ''
+    : card.closest('.in-progress-section')
+      ? '<span class="image-hint">IN DEVELOPMENT</span>'
+      : '<span class="image-hint">PROJECT ARCHIVE</span>';
+  card.insertAdjacentHTML('beforeend', `${imageHint}<div class="card-peek"><span>BUILT WITH · ${tech}</span><p>${project.detail}</p>${role ? `<span class="project-role">ROLE · ${role}</span>` : ''}<strong>${project.url ? 'Open project ↗' : 'Project overview'}</strong>${project.url ? '<span>Click to visit the game page</span>' : ''}</div>`);
   if (previewImages.length) {
     card.classList.add('has-image');
     card.style.setProperty('--project-image', `url("${previewImages[0]}")`);

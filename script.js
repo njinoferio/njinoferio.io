@@ -1,22 +1,61 @@
 const projects = {
-  'Paramnesia': { detail: 'A psychological horror game made in Unity, built around unsettling discoveries and atmosphere.', url: '', image: 'paramnesia.jpeg' },
-  'Scars of Harpuia': { detail: 'A multiplayer project currently in beta testing, focused on shared adventure and player connection.', url: '', image: 'scars-of-harpuia.png' },
-  'Mythos Manuscripts': { detail: 'An educational game that turns folklore and learning into something interactive.', url: '', image: 'mythos-manuscripts.jpeg' },
-  'Bounce': { detail: 'A compact Unreal physics experiment focused on movement that feels great.', url: '', image: '' },
-  'QuestLog': { detail: 'A web-hosted community concept for players to gather, share, and connect.', url: '', image: '' },
-  'Local Multiplayer Tic-Tac-Toe': { detail: 'A locally hosted Unity multiplayer game designed for shared play.', url: '', image: '' },
-  'Text Based Fighting Game': { detail: 'A command-line fighting game built with the C programming language.', url: '', image: '' },
-  'Text Based Tic-Tac-Toe': { detail: 'A classic Tic-Tac-Toe game implemented in C.', url: '', image: '' },
-  'Text Based Bank Simulator': { detail: 'A text-based banking simulation built with C.', url: '', image: '' },
-  'Elden Rouge': { detail: 'A C++ project exploring gameplay through code.', url: '', image: '' },
-  'Nomorod': { detail: 'A text-based, turn-based C++ creature-battling adventure inspired by classic monster-collection games.', url: '', image: '' },
-  'Personal OpenGL Game Engine': { detail: 'A personal game engine built from the ground up with OpenGL, C++, and CMake.', url: '', image: '' },
-  'White Room': { detail: 'A Unity environment study focused on designing a residential interior with a clean, considered atmosphere.', url: '', image: '' },
-  'Museum Environment': { detail: 'A Unity environment project exploring visual storytelling through a museum-inspired space.', url: '', image: '' },
-  'Horror Microgame': { detail: 'A short Unity horror experience built around mood, pacing, and a focused player journey.', url: '', image: '' },
-  'Bank Environment': { detail: 'An Unreal environment study focused on creating a detailed and believable bank interior.', url: '', image: '' },
-  'Mailers Mailroom': { detail: 'An early Unity prototype currently being shaped and tested.', url: '', image: '' },
-  'Kandili Sanctuary': { detail: 'A Unity project in its prototype phase, currently being developed.', url: '', image: 'kandili-sanctuary.png' }
+  'Paramnesia': { summary: 'A horror maze shaped by memory.', detail: 'A psychological horror game where memory is the map and every wrong turn makes the world less reliable.', url: '', image: 'paramnesia.jpeg' },
+  'Scars of Harpuia': { summary: 'A co-op quest to break a curse.', detail: 'A co-op fantasy adventure where two players break a curse and prevent a continental war through friendship.', url: '', image: 'scars-of-harpuia.png' },
+  'Mythos Manuscripts': { summary: 'A Greek-myth puzzle-platformer.', detail: 'A Greek-mythology learning adventure where players guide Gabby through puzzles, platforming, and legendary stories.', url: '', image: 'mythos-manuscripts.jpeg' },
+  'Bounce': { summary: 'A 3D physics platforming study.', detail: 'A 3D reimagining of the classic 2D Bounce concept, built around movement and physics.', url: '', image: '' },
+  'QuestLog': { summary: 'A social platform for players.', detail: 'A web-hosted community concept for players to gather, share, and connect.', url: '', image: 'questlog.jpg' },
+  'Local Multiplayer Tic-Tac-Toe': { summary: 'A shared local multiplayer classic.', detail: 'A locally hosted Unity multiplayer game designed for shared play.', url: '', image: '' },
+  'Text Based Fighting Game': { summary: 'A command-line combat game.', detail: 'A command-line fighting game built with the C programming language.', url: '', image: '' },
+  'Text Based Tic-Tac-Toe': { summary: 'A terminal take on a classic game.', detail: 'A classic Tic-Tac-Toe game implemented in C.', url: '', image: '' },
+  'Text Based Bank Simulator': { summary: 'A command-line banking simulation.', detail: 'A text-based banking simulation built with C.', url: '', image: '' },
+  'Elden Rouge': { summary: 'A 2D action adventure.', detail: 'A 2D action adventure inspired by Elden Ring.', url: '', image: '' },
+  'Nomorod': { summary: 'A text-based creature battler.', detail: 'A text-based, turn-based C++ creature-battling adventure inspired by classic monster-collection games.', url: '', image: '' },
+  'Personal OpenGL Game Engine': { summary: 'A custom OpenGL engine.', detail: 'A personal game engine built from the ground up with OpenGL, C++, and CMake.', url: '', image: '' },
+  'White Room': { summary: 'A Unity house environment study.', detail: 'A Unity environment study focused on designing a residential interior with a clean, considered atmosphere.', url: '', image: '' },
+  'Museum Environment': {
+    summary: 'A Unity museum environment study.',
+    detail: 'A Unity environment project exploring visual storytelling through a museum-inspired space.',
+    url: '',
+    image: 'museum-environment-01.png',
+    images: ['museum-environment-01.png', 'museum-environment-02.png']
+  },
+  'Horror Microgame': { summary: 'A compact Unity horror experience.', detail: 'A short Unity horror experience built around mood, pacing, and a focused player journey.', url: '', image: '' },
+  'Bank Environment': {
+    summary: 'An Unreal bank environment study.',
+    detail: 'An Unreal environment study focused on creating a detailed and believable bank interior.',
+    url: '',
+    image: 'bank-environment-01.jpeg',
+    images: [
+      'bank-environment-01.jpeg',
+      'bank-environment-02.jpeg',
+      'bank-environment-03.jpeg',
+      'bank-environment-04.jpeg',
+      'bank-environment-05.jpeg'
+    ]
+  },
+  'Mailers Mailroom': { summary: 'Postal deduction in Hiraya Town.', detail: 'A cozy 2D postal deduction game where players match letters and packages to Hiraya Town residents.', url: '', image: '' },
+  'Kandili Sanctuary': { summary: 'A conservation adventure in Palawan.', detail: 'A conservation adventure in Palawan where a wildlife researcher investigates reports and builds an eco-binder.', url: '', image: 'kandili-sanctuary.png' }
+};
+
+const projectRoles = {
+  'Paramnesia': 'Environment Artist · Gameplay Programmer',
+  'Scars of Harpuia': 'Puzzle Systems Designer · Backend Programmer · Composer · Dialogue Writer',
+  'Mythos Manuscripts': 'Game Flow Designer · Pixel Character Artist',
+  'Bounce': 'Environment Artist',
+  'QuestLog': 'Concept Designer · Frontend Developer · Backend Developer',
+  'Local Multiplayer Tic-Tac-Toe': 'Programmer',
+  'Text Based Fighting Game': 'Programmer',
+  'Text Based Tic-Tac-Toe': 'Programmer',
+  'Text Based Bank Simulator': 'Programmer',
+  'Elden Rouge': 'Frontend Designer · Backend Programmer',
+  'Nomorod': 'Backend Programmer',
+  'Personal OpenGL Game Engine': 'Game Engine Developer',
+  'White Room': 'Environment Artist',
+  'Museum Environment': 'Environment Artist',
+  'Horror Microgame': 'Gameplay Programmer · Environment Artist',
+  'Bank Environment': 'Environment Artist · Lighting Artist',
+  'Mailers Mailroom': 'Game Designer · Programmer',
+  'Kandili Sanctuary': 'Game Designer · Narrative Designer · Programmer'
 };
 
 const pages = [...document.querySelectorAll('.page')];
@@ -37,8 +76,10 @@ document.querySelector('.author-note h2').textContent = 'I build game experience
 document.querySelectorAll('.author-note > p:not(.hand-note)')[0].textContent = 'I am a game developer and pixel artist drawn to expressive worlds, satisfying systems, and details that invite players to stay curious.';
 document.querySelectorAll('.author-note > p:not(.hand-note)')[1].textContent = 'I believe it is never too late to try something new, and there is always room to learn, refine, and improve.';
 document.querySelector('.projects-page .page-heading p').textContent = 'A selection of game, programming, and community-focused projects I enjoyed bringing to life.';
-document.querySelector('.contact-copy h2').innerHTML = 'Let’s create<br />something memorable.';
-document.querySelector('.contact-copy > p:not(.hand-note)').textContent = 'Have a project, collaboration, or opportunity in mind? I would be happy to hear from you.';
+document.querySelector('.contact-copy .hand-note').textContent = 'Let’s start a conversation.';
+document.querySelector('.contact-copy h2').innerHTML = 'Make something<br />worth playing.';
+document.querySelector('.contact-copy > p:not(.hand-note)').textContent = 'I’m interested in thoughtful game projects where design, art, and technology work together.';
+document.querySelector('.contact-copy > p:not(.hand-note)').insertAdjacentHTML('afterend', '<p class="availability-note">Currently seeking internships and junior game-development opportunities, and open to select collaborations.</p>');
 document.querySelector('[data-go="1"]').textContent = 'About';
 document.querySelector('[data-go="2"]').textContent = 'Projects';
 document.querySelector('.work-link').href = 'https://canva.link/tr5pm6n4q8vkvb2';
@@ -89,8 +130,9 @@ function showPage(index) {
 
 function makeExtraCard(title, type, engine, letter, target = document.querySelector('.project-grid')) {
   const card = document.createElement('article');
+  const status = target.classList.contains('in-progress-grid') ? 'Currently in development.' : 'Completed project.';
   card.className = 'game-card sage';
-  card.innerHTML = `<span>${engine}</span><div><p>${type}</p><h3>${title}</h3><small>Part of the complete collection.</small></div><b>${letter}</b>`;
+  card.innerHTML = `<span>${engine}</span><div><p>${type}</p><h3>${title}</h3><small>${status}</small></div><b>${letter}</b>`;
   target.append(card);
   return card;
 }
@@ -119,6 +161,16 @@ if (scarsCard) inProgress.querySelector('.in-progress-grid').append(scarsCard);
 makeExtraCard('Mailers Mailroom', 'UNITY · IN PROGRESS', 'UNITY / 05', 'M', inProgress.querySelector('.in-progress-grid'));
 makeExtraCard('Kandili Sanctuary', 'UNITY · IN PROGRESS', 'UNITY / 06', 'K', inProgress.querySelector('.in-progress-grid'));
 document.querySelector('.archive')?.remove();
+
+function sortProjectCards(projectGrid) {
+  [...projectGrid.children]
+    .sort((firstCard, secondCard) => firstCard.querySelector('h3').textContent.localeCompare(secondCard.querySelector('h3').textContent))
+    .forEach(card => projectGrid.append(card));
+}
+
+sortProjectCards(inProgress.querySelector('.in-progress-grid'));
+sortProjectCards(pastProjects);
+
 const skillList = document.querySelector('.skill-list');
 skillList.innerHTML = [
   ['GAME ENGINES', 'Unity · Unreal'],
@@ -138,7 +190,7 @@ pastProjects.before(pastDivider);
 const inProgressCount = inProgress.querySelector('.in-progress-grid').children.length;
 const pastCount = pastProjects.children.length;
 inProgress.querySelector('h3').textContent = `${inProgressCount} project${inProgressCount === 1 ? '' : 's'} in the workshop.`;
-pastDivider.innerHTML = `<p class="page-kicker">PAST PROJECTS / COMPLETED COLLECTION</p><h3>${pastCount} completed projects.</h3>`;
+pastDivider.innerHTML = `<p class="page-kicker">PAST PROJECTS / COMPLETED WORK</p><h3>${pastCount} completed projects.</h3>`;
 document.querySelector('.corner-stamp').textContent = `${inProgressCount} IN PROGRESS · ${pastCount} PAST`;
 
 const techLabels = {
@@ -163,8 +215,33 @@ const techLabels = {
 };
 document.querySelectorAll('.game-card').forEach(card => {
   const title = card.querySelector('h3')?.textContent.trim();
-  if (techLabels[title]) card.querySelector('span').textContent = techLabels[title];
+  if (techLabels[title]) {
+    card.querySelector('span').textContent = techLabels[title];
+    card.dataset.tech = techLabels[title];
+  }
   if (categories[title]) card.querySelector('div p').textContent = categories[title];
+});
+
+const projectFilter = document.createElement('div');
+projectFilter.className = 'project-filter';
+projectFilter.innerHTML = `<label for="project-tech-filter">Filter by technology</label><select id="project-tech-filter"><option value="all">All technologies</option><option value="unity">Unity</option><option value="unreal">Unreal</option><option value="c">C</option><option value="cpp">C++</option><option value="web">Web</option><option value="opengl">OpenGL</option></select>`;
+inProgress.before(projectFilter);
+
+const projectTechFilter = projectFilter.querySelector('select');
+const matchesTechnology = (technology, selectedFilter) => {
+  if (selectedFilter === 'all') return true;
+  if (selectedFilter === 'unity') return technology === 'UNITY';
+  if (selectedFilter === 'unreal') return technology === 'UNREAL';
+  if (selectedFilter === 'c') return technology === 'C';
+  if (selectedFilter === 'cpp') return technology.includes('C++');
+  if (selectedFilter === 'web') return technology.includes('CSS');
+  return technology.includes('OPENGL');
+};
+
+projectTechFilter.addEventListener('change', () => {
+  document.querySelectorAll('.game-card').forEach(card => {
+    card.hidden = !matchesTechnology(card.dataset.tech || '', projectTechFilter.value);
+  });
 });
 
 document.querySelectorAll('.game-card').forEach(card => {
@@ -172,11 +249,26 @@ document.querySelectorAll('.game-card').forEach(card => {
   const project = projects[title];
   if (!project) return;
   const tech = techLabels[title] || 'PROJECT';
-  card.insertAdjacentHTML('beforeend', `<span class="image-hint">COMING SOON</span><div class="card-peek"><span>BUILT WITH · ${tech}</span><p>${project.detail}</p><strong>${project.url ? 'Open project ↗' : 'Project overview'}</strong>${project.url ? '<span>Click to visit the game page</span>' : ''}</div>`);
-  if (project.image) {
+  const role = projectRoles[title];
+  const summary = card.querySelector('small');
+  if (summary) summary.textContent = project.summary;
+  card.insertAdjacentHTML('beforeend', `<span class="image-hint">COMING SOON</span><div class="card-peek"><span>BUILT WITH · ${tech}</span><p>${project.detail}</p>${role ? `<span class="project-role">ROLE · ${role}</span>` : ''}<strong>${project.url ? 'Open project ↗' : 'Project overview'}</strong>${project.url ? '<span>Click to visit the game page</span>' : ''}</div>`);
+  const previewImages = project.images?.length ? project.images : project.image ? [project.image] : [];
+  if (previewImages.length) {
     card.classList.add('has-image');
-    card.style.setProperty('--project-image', `url("${project.image}")`);
+    card.style.setProperty('--project-image', `url("${previewImages[0]}")`);
     card.style.setProperty('--project-position', title === 'Scars of Harpuia' ? 'center 38%' : title === 'Paramnesia' ? 'center 35%' : 'center 52%');
+    if (previewImages.length > 1) {
+      let previewIndex = 0;
+      card.setAttribute('aria-label', `${title} image slideshow`);
+      window.setInterval(() => {
+        previewIndex = (previewIndex + 1) % previewImages.length;
+        card.style.setProperty('--project-image', `url("${previewImages[previewIndex]}")`);
+        card.classList.remove('is-changing-preview');
+        void card.offsetWidth;
+        card.classList.add('is-changing-preview');
+      }, 4600);
+    }
   }
   if (project.url) {
     card.classList.add('is-linked');

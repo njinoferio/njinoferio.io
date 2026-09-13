@@ -152,6 +152,71 @@
     background-repeat: no-repeat !important;
   }
 
+  .game-card.is-changing-preview::after {
+    animation: project-preview-change 0.5s ease both;
+  }
+
+  .game-card .card-peek .project-role {
+    display: block;
+    margin-top: 10px;
+    color: #d6ead5 !important;
+    font: 700 0.68rem/1.45 Manrope, Arial, sans-serif;
+    letter-spacing: 0.07em;
+  }
+
+  .contact-copy .availability-note {
+    max-width: 430px;
+    margin: 20px 0 0;
+    padding: 11px 0 11px 14px;
+    border-left: 2px solid #b9d7b9;
+    color: #dcefdc !important;
+    font: 600 0.92rem/1.55 Manrope, Arial, sans-serif;
+  }
+
+  .project-filter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 36px;
+    color: #173b2a;
+    font: 700 0.76rem/1.2 Manrope, Arial, sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .projects-page .project-filter label { color: #173b2a !important; }
+
+  .project-filter select {
+    min-width: 190px;
+    padding: 10px 34px 10px 12px;
+    border: 1px solid #557b61;
+    border-radius: 0;
+    background: #14291e;
+    color: #eff8ed;
+    font: 600 0.84rem/1.2 Manrope, Arial, sans-serif;
+  }
+
+  .project-filter select:focus {
+    outline: 2px solid #b9d7b9;
+    outline-offset: 2px;
+  }
+
+  .game-card[hidden] { display: none !important; }
+
+  @media (max-width: 520px) {
+    .project-filter { align-items: flex-start; flex-direction: column; margin-bottom: 28px; }
+    .project-filter select { width: 100%; }
+  }
+
+  @keyframes project-preview-change {
+    from { opacity: 0.45; }
+    to { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .game-card.is-changing-preview::after { animation: none; }
+  }
+
   .cover-page .hero-portrait {
     position: relative;
     align-self: stretch;
